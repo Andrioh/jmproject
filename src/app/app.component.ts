@@ -5,9 +5,6 @@ import { AccordionComponent } from './accordion.component';
   selector: 'app-root',
   standalone: true,
   imports: [AccordionComponent],
-  host:{
-    class: 'block p-10'
-  },
   template: `<jmproject-accordion/>`
 })
 export class AppComponent {

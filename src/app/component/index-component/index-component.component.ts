@@ -1,13 +1,13 @@
+// src/app/component/index-component/index-component.component.ts
+
 import { Component } from '@angular/core';
-import { ButtonIndexComponent } from "../button-index/button-index.component";
+import { ButtonIndexModule } from '../button-index/button-index.module'; // Ajuste o caminho conforme necessário
 
 @Component({
   selector: 'app-index-component',
   standalone: true,
-  imports: [ButtonIndexComponent],
+  imports: [ButtonIndexModule], // Importa o módulo que contém o ButtonIndexComponent
   templateUrl: './index-component.component.html',
-  styleUrl: './index-component.component.css'
+  styleUrls: ['./index-component.component.css']
 })
-export class IndexComponentComponent {
-
-}
+export class IndexComponentComponent {}

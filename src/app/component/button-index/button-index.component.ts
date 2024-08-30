@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button-index',
-  standalone: true,
-  imports: [],
   templateUrl: './button-index.component.html',
-  styleUrl: './button-index.component.css'
+  styleUrls: ['./button-index.component.css']
 })
 export class ButtonIndexComponent {
-
+  @Input() title: string | undefined;
+  @Input() about: string | undefined;
+  @Input() svgPath: string | undefined;
 }

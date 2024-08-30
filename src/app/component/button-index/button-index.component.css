@@ -22,3 +22,13 @@
     font-size: 14px;
     color: #64748B;
 }
+
+button{
+    transition: 0.2s;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+}

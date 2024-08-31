@@ -1,8 +1,8 @@
 <div id="div-dad" class="border-b-4">
     <div id="div-option">
-        <button class="ml-3 rounded border-2 border-inherit p-1">
+        <button class="ml-3 rounded border-2 border-inherit p-1" (click)="navigate()">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <path [attr.d]="svgPath2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>                         
         </button>
     </div>

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { HeaderComponentModule } from "../../component/header/header.module";
 import { OrganizationsComponentComponent } from "../../component/organizations-component/organizations-component.component";
+import { HeaderComponent } from '../../component/header/header.component';
 
 @Component({
   selector: 'app-organizations',
   standalone: true,
-  imports: [HeaderComponentModule, OrganizationsComponentComponent],
+  imports: [OrganizationsComponentComponent, HeaderComponent],
   templateUrl: './organizations.component.html',
   styleUrl: './organizations.component.css'
 })

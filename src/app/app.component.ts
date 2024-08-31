@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { AccordionComponent } from './accordion.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AccordionComponent],
-  template: `<jmproject-accordion/>`
+  imports: [RouterModule],
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
   title = 'jmproject';

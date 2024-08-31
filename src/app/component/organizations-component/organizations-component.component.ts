@@ -12,7 +12,12 @@ export class OrganizationsComponentComponent {
 
   HasOrganization: boolean = false;
 
-  StartOrganization(){
-
+  StartOrganization() {
+    if (this.HasOrganization == false) {
+      this.HasOrganization = true
+    } else {
+      this.HasOrganization = false
+    }
   }
+
 }

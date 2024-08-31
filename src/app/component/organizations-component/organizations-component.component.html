@@ -3,11 +3,48 @@
         <h2 id="h2-title">Organizations</h2>
         <h4 id="h4-settings">See all the organizations that you're a part of.</h4>
     </div>
-    <div id="div-dad-orga">
-        <div id="div-orga" *ngIf="!HasOrganization">
+    <div id="div-dad-orga" *ngIf="!HasOrganization">
+        <div class="div-orga">
             <h3 class="font-bold text-2xl">Is empty here</h3>
             <p id="paragraph">You dont have any organization or not belongs to any</p>
             <button id="btn-start-organization" (click)="StartOrganization()">Start a organization</button>
+        </div>
+    </div>
+    <div id="div-dad-orga2"  *ngIf="HasOrganization">
+        <div id="title-my">
+            <h3 class="">My organizations</h3>
+            <button id="btn-start-organization2">New organization</button>
+        </div>
+
+        <div id="table-organization">
+            <div id="name">
+                <p>Name</p>
+            </div>
+
+            <div id="organization">
+                
+                <div class="Cub-Organization">
+                    <p>Organizacao 01</p>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>                          
+                    </button>                      
+                </div>
+                <div class="Cub-Organization">
+                    <p>Organizacao 02</p>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>                          
+                    </button>                      
+                </div>
+            </div>
+
+            <div id="title-collaborate">
+                <h3>My organizations</h3>
+                <p>You dont collaborate with any organization yet.</p>
+            </div>
         </div>
     </div>
 </div>

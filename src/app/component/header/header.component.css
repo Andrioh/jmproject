@@ -30,3 +30,9 @@ button:hover{
     cursor: pointer;
     transition: 0.2s;
 }
+
+@media (max-width: 280px) {
+    #div-options {
+        display: none;
+    }
+}

@@ -1,1 +1,13 @@
-<p>organizations-component works!</p>
+<div id="div-dad">
+    <div id="title">
+        <h2 id="h2-title">Organizations</h2>
+        <h4 id="h4-settings">See all the organizations that you're a part of.</h4>
+    </div>
+    <div id="div-dad-orga">
+        <div id="div-orga" *ngIf="!HasOrganization">
+            <h3 class="font-bold text-2xl">Is empty here</h3>
+            <p id="paragraph">You dont have any organization or not belongs to any</p>
+            <button id="btn-start-organization" (click)="StartOrganization()">Start a organization</button>
+        </div>
+    </div>
+</div>

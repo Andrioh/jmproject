@@ -1,0 +1,60 @@
+<div class="flex flex-col p-4 gap-8">
+    <div>
+        <h2 class="font-bold">Welcome,</h2>
+        <h2 class="font-bold">Jonathan Moreira</h2>
+        <h4 class="text-[#64748B]">Here are your settings</h4>
+    </div>
+
+    <div class="flex gap-4">
+        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg">
+            <div hlmCardHeader>
+                <h3 class="text-center font-bold">My Security Info</h3>
+            </div>
+            <div hlmCardContent class="flex items-center justify-center flex-1">
+                <hlm-icon name="lucideShieldAlert" class="h-20 w-20"></hlm-icon>
+            </div>
+            <p hlmCardFooter class="text-[#64748B] text-center">Update your security settings regularly.</p>
+        </section>
+
+        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg">
+            <div hlmCardHeader>
+                <h3 class="text-center font-bold">Password</h3>
+            </div>
+            <div hlmCardContent class="flex items-center justify-center flex-1">
+                <hlm-icon name="lucideKey" class="h-20 w-20"></hlm-icon>
+            </div>
+            <p hlmCardFooter class="text-[#64748B] text-center">Make your password stronger, or change it if someone else knows it.</p>
+        </section>
+
+        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg">
+            <div hlmCardHeader>
+                <h3 class="text-center font-bold">My sign-ins</h3>
+            </div>
+            <div hlmCardContent class="flex items-center justify-center flex-1">
+                <hlm-icon name="lucideRefreshCcw" class="h-20 w-20"></hlm-icon>
+            </div>
+            <p hlmCardFooter class="text-[#64748B] text-center">See when and where you've signed in and check if anything looks unusual.</p>
+        </section>
+
+        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg">
+            <div hlmCardHeader>
+                <h3 class="text-center font-bold">Settings & Privacy</h3>
+            </div>
+            <div hlmCardContent class="flex items-center justify-center flex-1">
+                <hlm-icon name="lucideSettings" class="h-20 w-20"></hlm-icon>
+            </div>
+            <p hlmCardFooter class="text-[#64748B] text-center">Personalize your account settings and see how your data is used.</p>
+        </section>
+
+        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg" [routerLink]="['', 'organizations']">
+            <div hlmCardHeader>
+                <h3 class="text-center font-bold">Organizations</h3>
+            </div>
+            <div hlmCardContent class="flex items-center justify-center flex-1">
+                <hlm-icon name="lucideBuilding2" class="h-20 w-20"></hlm-icon>
+            </div>
+            <p hlmCardFooter class="text-[#64748B] text-center">See all the organizations that you're a part of.</p>
+        </section>
+    
+    </div>
+</div>

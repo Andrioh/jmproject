@@ -1,20 +1,22 @@
-import { Component, Input } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { provideIcons } from '@ng-icons/core';
+import { lucideBell, lucideHelpCircle, lucideMenu, lucideMessageSquare } from '@ng-icons/lucide';
+import { HlmButtonModule } from '@spartan-ng/ui-button-helm';
+import { HlmIconModule } from '@spartan-ng/ui-icon-helm';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css',
+    standalone: true,
+    imports: [
+        CommonModule,
+        HlmButtonModule,
+        HlmIconModule
+    ],
+    providers: [
+        provideIcons({ lucideMenu, lucideMessageSquare, lucideHelpCircle, lucideBell })
+    ]
 })
-export class HeaderComponent {
-  constructor(private route:Router){}
-
-  @Input() svgPath2: string = 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-  @Input() buttonurl2: string | undefined
-
-  navigate(): void{
-    if (this.buttonurl2){
-      this.route.navigate([this.buttonurl2])
-    }
-  }
-}
+export class HeaderComponent { }

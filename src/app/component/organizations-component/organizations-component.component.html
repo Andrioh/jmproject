@@ -3,6 +3,7 @@
         <h2 id="h2-title">Organizations</h2>
         <h4 id="h4-settings">See all the organizations that you're a part of.</h4>
     </div>
+
     <div id="div-dad-orga" *ngIf="!HasOrganization">
         <div class="div-orga">
             <h3 class="font-bold text-2xl">Is empty here</h3>
@@ -10,41 +11,100 @@
             <button id="btn-start-organization" (click)="StartOrganization()">Start a organization</button>
         </div>
     </div>
-    <div id="div-dad-orga2"  *ngIf="HasOrganization">
-        <div id="title-my">
-            <h3 class="">My organizations</h3>
+
+    <div class="flex items-center justify-start flex-col mt-10 mb-10" *ngIf="HasOrganization">
+        <div class="flex flex-row justify-between h-[10%] w-[95%]">
+            <h3>My organizations</h3>
             <button id="btn-start-organization2">New organization</button>
         </div>
 
         <div id="table-organization">
-            <div id="name">
-                <p>Name</p>
+            <div class="table-dad">
+                <section class="h-full w-3/5">
+                    <p>Name</p>
+                </section>
             </div>
-
-            <div id="organization">
-                
+            <div>
                 <div class="Cub-Organization">
-                    <p>Organizacao 01</p>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </button>                      
+                    <section class="cub-name">
+                        <p>Organizacao 01</p>
+                    </section>
+                    <section class="cub-button">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg>
+                        </button>
+                    </section>
                 </div>
-                <div class="Cub-Organization">
-                    <p>Organizacao 02</p>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                        </svg>                          
-                    </button>                      
-                </div>
-            </div>
-
-            <div id="title-collaborate">
-                <h3>My organizations</h3>
-                <p>You dont collaborate with any organization yet.</p>
             </div>
         </div>
     </div>
+
+    <div class="flex items-center justify-start flex-col mt-10 mb-10" *ngIf="HasOrganization">
+        <div class="flex flex-col h-[10%] w-[95%]">
+            <h3>Organization you collaborate with</h3>
+            <p>You dont collaborate with any organization yet.</p>
+        </div>
+
+        <div id="table-organization" *ngIf="!HasCollaborate">
+            <div class="table-dad">
+                <section class="h-full w-3/5">
+                    <p>Name</p>
+                </section>
+                <section class="h-full w-1/3">
+                    <p>Status</p>
+                </section>
+            </div>
+            <div>
+                <div class="Cub-Organization">
+                    <section class="cub-name2">
+                        <p>Organizacao 01</p>
+                    </section>
+                    <section class="cub-status">
+                        <div class="status">
+                            <div class="sub-status">
+                                Aguardando resposta
+                            </div>
+                        </div>
+                    </section>
+                    <section class="cub-button">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg>
+                        </button>
+                    </section>
+                </div>
+            </div>
+            <div>
+                <div class="Cub-Organization">
+                    <section class="cub-name2">
+                        <p>Organizacao 02</p>
+                    </section>
+                    <section class="cub-status">
+                        <div class="status">
+                            <div class="sub-status">
+                                Membro
+                            </div>
+                        </div>
+                    </section>
+                    <section class="cub-button">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg>
+                        </button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -11,13 +11,11 @@ import { CommonModule } from '@angular/common';
 export class OrganizationsComponentComponent {
 
   HasOrganization: boolean = false;
+  HasCollaborate: boolean = false;
 
   StartOrganization() {
-    if (this.HasOrganization == false) {
-      this.HasOrganization = true
-    } else {
-      this.HasOrganization = false
-    }
-  }
+    this.HasOrganization = !this.HasOrganization;
+    this.HasCollaborate = !this.HasCollaborate;
+  }  
 
 }

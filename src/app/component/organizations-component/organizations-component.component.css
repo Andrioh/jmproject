@@ -28,15 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 65vh;
-    margin-top: 10vh;
+    margin-top: 10%;
     width: 100vw;
-}
-
-#div-dad-orga2{
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
 }
 
 .div-orga{
@@ -75,58 +68,67 @@ button:hover{
     transition: 0.2s;
 }
 
-#title-my{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 10%;
-    width: 95%;
-}
-
 #table-organization{
     height: 40%;
     width: 95%;
     margin-top: 10px;
 }
 
-#name{
-    display: flex;
-    justify-content: left;
-    font-size: 12px;
-    color: #64748B;
-    align-items: center;
-    background-color: #FFFFFF;
-    height: 30px;
-    border-radius: 5px 5px 0px 0px;
-    border: 1px solid #797979;
-    padding: 5px;
+.Cub-Organization:last-child {
+    border-radius: 0px 0px 5px 5px;
 }
 
-#organization{
-    overflow-y: auto;
-    height: calc(100% - 30px);
+h3{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.status{
+    display: flex;
+    font-size: 10px;
+    background-color: #E2E8F0;
+    border-radius: 10px;
+    padding: 2px 10px;
+    color: #0F172A;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
 }
 
 .Cub-Organization{
     padding: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
+    background-color: #FFFFFF;
     border: 1px solid #797979;
 }
 
-.Cub-Organization:last-child {
-    border-radius: 0px 0px 5px 5px;
-}
-
-#title-collaborate{
+.table-dad{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #64748B;
+    background-color: #FFFFFF;
+    height: 30px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #797979;
+    padding: 5px;
 }
 
-h3{
-    font-weight: bold;
-    font-size: 18px;
+.cub-name{
+    width: 90%;
+}
+
+.cub-name2{
+    width: 60%;
+}
+
+.cub-status{
+    width: 30%;
+}
+.cub-button{
+    display: flex;
+    justify-content: right;
+    width: 10%;
 }

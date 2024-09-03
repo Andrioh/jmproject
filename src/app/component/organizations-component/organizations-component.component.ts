@@ -10,7 +10,13 @@ import {
   HlmThComponent,
   HlmTrowComponent,
 } from '@spartan-ng/ui-table-helm';
+import { last } from 'rxjs';
 
+
+interface organization{
+  id: number,
+  name: string,
+}
 
 @Component({
   selector: 'app-organizations-component',
@@ -22,12 +28,28 @@ import {
 
 export class OrganizationsComponentComponent {
 
-  HasOrganization: boolean = true;
-  HasCollaborate: boolean = true;
+  organizations: organization[] = [
+  ];
+
+  HasOrganization: boolean = false;
+  HasCollaborate: boolean = false;
 
   StartOrganization() {
     this.HasOrganization = !this.HasOrganization;
-    this.HasCollaborate = !this.HasCollaborate;
+  }  
+
+  NwOrganization() {
+    if (this.organizations) {
+      let lastId = this.organizations.reduce((maxId, org) => Math.max(maxId, org.id), 0);
+      
+      lastId += 1;
+      
+      const format = lastId < 10 ? `0${lastId}` : `${lastId}`;
+      
+      const newOrga = { id: lastId, name: `Organization ${format}` };
+      
+      this.organizations.push(newOrga)
+    }
   }  
 
 }

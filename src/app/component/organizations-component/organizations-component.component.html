@@ -20,11 +20,26 @@
 
 
         <hlm-table class="border border-gray-400 w-[95%] mt-2 rounded">
-            <hlm-trow>
-                <hlm-th class="text-xs text-[#64748B]">Name</hlm-th>
-            </hlm-trow>
-            <hlm-trow *ngFor="let item of organizations">
-                <hlm-th class="flex text-sm text-[#020617]">{{ item.name }}</hlm-th>
+           <hlm-trow>
+                <hlm-td class="text-xs text-[#64748B] w-[60%]">Name</hlm-td>
+           </hlm-trow>
+
+            <hlm-trow class="flex items-center justify-between" *ngFor="let item of organizations">
+                <div class="w-[60%] flex justify-right items-center">
+                    <hlm-td class="text-[#020617]">{{item.name}}</hlm-td>
+                </div>
+                
+                <div class="w-[10%] flex justify-center items-center"> 
+                    <hlm-td>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg>
+                        </button>
+                    </hlm-td>
+                </div>
             </hlm-trow>
         </hlm-table>
 

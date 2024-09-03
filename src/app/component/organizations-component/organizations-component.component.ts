@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {
+  HlmCaptionComponent,
+  HlmTableComponent,
+  HlmTableModule,
+  HlmTdComponent,
+  HlmThComponent,
+  HlmTrowComponent,
+} from '@spartan-ng/ui-table-helm';
+
+
 @Component({
   selector: 'app-organizations-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HlmTableModule],
   templateUrl: './organizations-component.component.html',
   styleUrl: './organizations-component.component.css'
 })

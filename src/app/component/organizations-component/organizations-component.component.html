@@ -18,29 +18,23 @@
             <button id="btn-start-organization2">New organization</button>
         </div>
 
-        <div id="table-organization">
-            <div class="table-dad">
-                <section class="h-full w-3/5">
-                    <p>Name</p>
-                </section>
-            </div>
-            <div>
-                <div class="Cub-Organization">
-                    <section class="cub-name">
-                        <p>Organizacao 01</p>
-                    </section>
-                    <section class="cub-button">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </button>
-                    </section>
-                </div>
-            </div>
-        </div>
+
+        <hlm-table>
+            <hlm-caption>A list of your recent invoices.</hlm-caption>
+            <hlm-trow>
+                <hlm-th>Invoice</hlm-th>
+                <hlm-th>Status</hlm-th>
+                <hlm-th>Method</hlm-th>
+                <hlm-th>Amount</hlm-th>
+            </hlm-trow>
+            <hlm-trow>
+                <hlm-th>INV001</hlm-th>
+                <hlm-th>Paid</hlm-th>
+                <hlm-th>Credit Card</hlm-th>
+                <hlm-th>$250.00</hlm-th>
+            </hlm-trow>
+        </hlm-table>
+
     </div>
 
     <div class="flex items-center justify-start flex-col mt-10 mb-10" *ngIf="HasOrganization">

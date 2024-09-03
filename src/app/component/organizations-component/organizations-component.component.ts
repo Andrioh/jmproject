@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, importProvidersFrom } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrnTableModule } from '@spartan-ng/ui-table-brain';
 
 import {
   HlmCaptionComponent,
@@ -14,14 +15,15 @@ import {
 @Component({
   selector: 'app-organizations-component',
   standalone: true,
-  imports: [CommonModule, HlmTableModule],
+  imports: [CommonModule, HlmTableModule, BrnTableModule],
   templateUrl: './organizations-component.component.html',
   styleUrl: './organizations-component.component.css'
 })
+
 export class OrganizationsComponentComponent {
 
-  HasOrganization: boolean = false;
-  HasCollaborate: boolean = false;
+  HasOrganization: boolean = true;
+  HasCollaborate: boolean = true;
 
   StartOrganization() {
     this.HasOrganization = !this.HasOrganization;

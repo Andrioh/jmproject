@@ -1,10 +1,10 @@
-#div-dad{
+#div-dad {
     width: 100vw;
     height: 90vh;
     overflow-x: hidden;
 }
 
-#title{
+#title {
     display: flex;
     justify-content: end;
     align-items: flex-start;
@@ -14,17 +14,17 @@
     width: 100%;
 }
 
-#h2-title{
+#h2-title {
     font-weight: bold;
     font-size: 30px;
 }
 
-#h4-settings{
+#h4-settings {
     font-size: 20px;
     color: #64748B;
 }
 
-#div-dad-orga, #div-dad-orga2{
+#div-dad-orga {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@
     width: 100vw;
 }
 
-.div-orga{
+.div-orga {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,8 @@
     width: 60%;
 }
 
-#btn-start-organization, #btn-start-organization2{
+#btn-start-organization,
+#btn-start-organization2 {
     margin-top: 20px;
     background-color: #0F172A;
     color: #FFFFFF;
@@ -50,85 +51,25 @@
     border-radius: 5px;
 }
 
-#btn-start-organization2{
+#btn-start-organization2 {
     margin: 0px;
 }
 
-#paragraph{
+#paragraph {
     color: #64748B;
 }
 
-button{
+button {
     transition: 0.2s;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.1);
     cursor: pointer;
     transition: 0.2s;
 }
 
-#table-organization{
-    height: 40%;
-    width: 95%;
-    margin-top: 10px;
-}
-
-.Cub-Organization:last-child {
-    border-radius: 0px 0px 5px 5px;
-}
-
-h3{
+h3 {
     font-weight: bold;
     font-size: 18px;
-}
-
-.status{
-    display: flex;
-    font-size: 10px;
-    background-color: #E2E8F0;
-    border-radius: 10px;
-    padding: 2px 10px;
-    color: #0F172A;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-}
-
-.Cub-Organization{
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    background-color: #FFFFFF;
-    border: 1px solid #797979;
-}
-
-.table-dad{
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: #64748B;
-    background-color: #FFFFFF;
-    height: 30px;
-    border-radius: 5px 5px 0 0;
-    border: 1px solid #797979;
-    padding: 5px;
-}
-
-.cub-name{
-    width: 90%;
-}
-
-.cub-name2{
-    width: 60%;
-}
-
-.cub-status{
-    width: 30%;
-}
-.cub-button{
-    display: flex;
-    justify-content: right;
-    width: 10%;
 }

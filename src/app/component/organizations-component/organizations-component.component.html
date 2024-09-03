@@ -19,86 +19,63 @@
         </div>
 
 
-        <hlm-table>
-            <hlm-caption>A list of your recent invoices.</hlm-caption>
+        <hlm-table class="border border-gray-400 w-[95%] mt-2 rounded">
             <hlm-trow>
-                <hlm-th>Invoice</hlm-th>
-                <hlm-th>Status</hlm-th>
-                <hlm-th>Method</hlm-th>
-                <hlm-th>Amount</hlm-th>
+                <hlm-th class="text-xs text-[#64748B]">Name</hlm-th>
             </hlm-trow>
             <hlm-trow>
-                <hlm-th>INV001</hlm-th>
-                <hlm-th>Paid</hlm-th>
-                <hlm-th>Credit Card</hlm-th>
-                <hlm-th>$250.00</hlm-th>
+                <hlm-th class="flex text-sm text-[#020617]">organizacao 01</hlm-th>
+            </hlm-trow>
+            <hlm-trow>
+                <hlm-th class="flex text-sm text-[#020617]">organizacao 02</hlm-th>
             </hlm-trow>
         </hlm-table>
 
     </div>
 
-    <div class="flex items-center justify-start flex-col mt-10 mb-10" *ngIf="HasOrganization">
+    <div class="flex items-center justify-start flex-col mt-10 mb-10">
         <div class="flex flex-col h-[10%] w-[95%]">
             <h3>Organization you collaborate with</h3>
-            <p>You dont collaborate with any organization yet.</p>
+            <p *ngIf="!HasOrganization">You dont collaborate with any organization yet.</p>
         </div>
 
-        <div id="table-organization" *ngIf="!HasCollaborate">
-            <div class="table-dad">
-                <section class="h-full w-3/5">
-                    <p>Name</p>
-                </section>
-                <section class="h-full w-1/3">
-                    <p>Status</p>
-                </section>
-            </div>
-            <div>
-                <div class="Cub-Organization">
-                    <section class="cub-name2">
-                        <p>Organizacao 01</p>
-                    </section>
-                    <section class="cub-status">
-                        <div class="status">
-                            <div class="sub-status">
-                                Aguardando resposta
-                            </div>
-                        </div>
-                    </section>
-                    <section class="cub-button">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </button>
-                    </section>
-                </div>
-            </div>
-            <div>
-                <div class="Cub-Organization">
-                    <section class="cub-name2">
-                        <p>Organizacao 02</p>
-                    </section>
-                    <section class="cub-status">
-                        <div class="status">
-                            <div class="sub-status">
-                                Membro
-                            </div>
-                        </div>
-                    </section>
-                    <section class="cub-button">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </button>
-                    </section>
-                </div>
-            </div>
-        </div>
+
+        <hlm-table class="border border-gray-400 w-[95%] mt-2 rounded">
+            <hlm-trow>
+                <hlm-th class="text-xs text-[#64748B] w-[60%]">Name</hlm-th>
+                <hlm-th class="text-xs text-[#64748B]">Status</hlm-th>
+            </hlm-trow>
+
+            <hlm-trow class="flex items-center justify-between">
+                <hlm-td class="text-[#020617] w-[49%]">Organizacao XX</hlm-td>
+                <hlm-td class="bg-[#E2E8F0] h-[30px] rounded-[10px] text-[12px] text-[#0F172A]">Aguardando
+                    resposta</hlm-td>
+                <hlm-td class="flex justify-center">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                    </button>
+                </hlm-td>
+            </hlm-trow>
+
+            <hlm-trow class="flex items-center justify-between">
+                <hlm-td class="text-[#020617] w-[40%]">Organizacao XY</hlm-td>
+                <hlm-td class="bg-[#E2E8F0] h-[30px] rounded-[10px] text-[12px] text-[#0F172A]">Membro</hlm-td>
+                <hlm-td>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                    </button>
+                </hlm-td>
+            </hlm-trow>
+        </hlm-table>
+
+
     </div>
-
 </div>

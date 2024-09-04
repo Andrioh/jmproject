@@ -1,5 +1,6 @@
-<div class="border-b-2 flex py-2 px-4 justify-between">
-    <button hlmBtn size="icon" variant="outline"><hlm-icon size='sm' name="lucideMenu" /></button>
+<div class="border-b-2 flex py-2 px-4 justify-between" [ngStyle]="{'background-color': BgColor}">
+    <button *ngIf="!AlterIcon" hlmBtn size="icon" variant="outline"><hlm-icon size='sm' name="lucideMenu" /></button>
+    <button *ngIf="AlterIcon" hlmBtn size="icon" variant="outline" (click)="BackPage()"><hlm-icon size='sm' name="lucideArrowLeft" /></button>
     <div class="flex gap-2">
         <button hlmBtn size="icon" variant="outline"><hlm-icon size='sm' name="lucideMessageSquare" /></button>
         <button hlmBtn size="icon" variant="outline"><hlm-icon size='sm' name="lucideHelpCircle" /></button>

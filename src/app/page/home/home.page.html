@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="flex flex-col p-4 gap-8">
     <div>
         <h2 class="font-bold">Welcome,</h2>
@@ -46,7 +47,7 @@
             <p hlmCardFooter class="text-[#64748B] text-center">Personalize your account settings and see how your data is used.</p>
         </section>
 
-        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg" [routerLink]="['', 'organizations']">
+        <section hlmCard class="w-64 flex flex-col cursor-pointer hover:shadow-lg" (click)="changeIcon()" [routerLink]="['', 'organizations']">
             <div hlmCardHeader>
                 <h3 class="text-center font-bold">Organizations</h3>
             </div>

@@ -1,4 +1,4 @@
-<div class="grow p-8" [ngClass]="{ 'absolute' : !hasOrganization }">
+<div class="px-8 pt-8" [ngClass]="{ 'absolute' : !hasOrganization }">
     <h2 hlmH2>Organizations</h2>
     <div class="text-sm text-slate-500">See all the organizations that you're a part of.</div>
 </div>
@@ -12,151 +12,144 @@
     </button>
 </div>
 }
+@else {
 
+<div class="p-8">
 
-<div *ngIf="false" class="flex flex-col p-8">
+    <div class="flex flex-row justify-between items-center">
+        <h2 hlmLarge>My organizations</h2>
 
-
-
-
-
-    <div class="flex items-center justify-start flex-col mt-10 mb-10" *ngIf="hasOrganization">
-        <div class="flex flex-row justify-between h-[10%] w-[95%]">
-            <h3 class="font-bold text-lg">My organizations</h3>
-            <button hlmBtn (click)="NwOrganization()">
+        <div>
+            <button hlmBtn (click)="create()">
                 New organization
             </button>
         </div>
-
-
-        <hlm-table class="border border-gray-400 w-[95%] mt-2 rounded">
-            <hlm-trow>
-                <hlm-td class="text-xs text-[#64748B] w-[60%]">Name</hlm-td>
-            </hlm-trow>
-
-            <hlm-trow class="flex items-center justify-between" *ngFor="let item of organizations">
-                <div class="w-[60%] flex justify-right items-center">
-                    <hlm-td class="text-[#020617]">{{item.name}}</hlm-td>
-                </div>
-
-                <div class="w-[10%] flex justify-center items-center">
-                    <hlm-td>
-                        <button (click)="EditOrganization()">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </button>
-                    </hlm-td>
-                </div>
-            </hlm-trow>
-        </hlm-table>
-
     </div>
 
-    <div class="flex items-center justify-start flex-col mt-10 mb-10" *ngIf="hasOrganization">
-        <div class="flex flex-col h-[10%] w-[95%]">
-            <h3 class="font-bold text-lg">Organization you collaborate with</h3>
-            <p *ngIf="!HasCollaborate">You dont collaborate with any organization yet.</p>
-        </div>
-
-
-        <hlm-table class="border border-gray-400 w-[95%] mt-2 rounded" *ngIf="HasCollaborate">
+    <div class="relative overflow-x-auto">
+        <hlm-table class="w-full text-sm text-left border border-gray-400 mt-2 rounded">
             <hlm-trow>
-                <hlm-th class="text-xs text-[#64748B] w-[60%]">Name</hlm-th>
-                <hlm-th class="text-xs text-[#64748B]">Status</hlm-th>
+                <hlm-th class="">Name</hlm-th>
             </hlm-trow>
-
-            <hlm-trow class="flex items-center justify-between">
-                <div class="w-[60%] flex justify-right items-center">
-                    <hlm-td class="text-[#020617]">Organizacao XX</hlm-td>
-                </div>
-                <div class="w-[30%] flex justify-right items-center">
-                    <hlm-td class="bg-[#E2E8F0] h-[30px] rounded-[10px] text-[12px] text-[#0F172A]">Aguardando
-                        resposta</hlm-td>
-                </div>
-                <div class="w-[10%] flex justify-center items-center">
-                    <hlm-td>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </button>
-                    </hlm-td>
-                </div>
-            </hlm-trow>
-
+            @for (item of organizations; track $index) {
             <hlm-trow>
-                <div class="w-[60%] flex justify-right items-center">
-                    <hlm-td class="text-[#020617]">Organizacao XY</hlm-td>
-                </div>
-                <div class="w-[30%] flex justify-right items-center">
-                    <hlm-td class="bg-[#E2E8F0] h-[30px] rounded-[10px] text-[12px] text-[#0F172A]">Membro</hlm-td>
-                </div>
-                <div class="w-[10%] flex justify-center items-center">
-                    <hlm-td>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                            </svg>
-                        </button>
-                    </hlm-td>
-                </div>
+                <hlm-td class=" w-[90%] justify-right items-center">{{item.name}}</hlm-td>
+
+                <hlm-td class=" w-[10%] justify-end">
+                    <button hlmBtn size="icon" variant="ghost" (click)="EditOrganization()">
+                        <hlm-icon size='sm' name="lucideMoreHorizontal" />
+                    </button>
+                </hlm-td>
             </hlm-trow>
+            }
         </hlm-table>
     </div>
+</div>
 
-    <div class="absolute top-0 w-full h-full flex justify-end items-center z-10" *ngIf="EditOrga">
+<div class="p-8">
 
-        <div class="w-[461px] h-full bg-white relative">
-
-            <div class="h-[10%] pl-[24px] flex justify-start items-center">
-
-                <button (click)="FinishEdit()" class="rounded-full" hlmBtn size="icon" variant="outline"><hlm-icon
-                        size='sm' name="lucideArrowLeft" /></button>
-                <p class="text-[#0F172A] pl-4">Editing organization</p>
-
-            </div>
-
-            <div class="w-[80%] pl-4 pt-4 h-[124px] flex gap-[16px] flex-col">
-
-                <section
-                    class="w-[328px] h-[42px] rounded-md p-2 gap-[8px] flex flex-row justify-center items-center bg-gray-200">
-                    <button
-                        class="w-[105px] h-[32px] text-[13px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-white flex items-center">General
-                        info</button>
-                    <button
-                        class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">Members</button>
-                    <button
-                        class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">Audit</button>
-                    <button
-                        class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">About</button>
-                </section>
-
-                <section>
-                    <label hlmLabel>Oganization<input
-                            class='border border-gray-400 w-[384px] h-[40px] gap-[8px] pl-[12px]'
-                            placeholder='Organizacao 01' /></label>
-                </section>
-
-            </div>
-
-            <div class="absolute bottom-[2%] right-[5%]">
-
-                <button class="pr-4" (click)="FinishEdit()">Cancel</button>
-                <button class="bg-[#0F172A]" hlmBtn (click)="FinishEdit()">Save</button>
-
-            </div>
-
-
-
-        </div>
-
+    <div class="flex flex-col">
+        <h2 hlmLarge>Organization you collaborate with</h2>
+        @if(!hasCollaborate){
+        <div class="text-sm text-slate-500">You dont collaborate with any organization yet.</div>
+        }
+        <button *ngIf="!hasCollaborate" (click)="hasCollaborate = !hasCollaborate">click to show</button>
     </div>
+
+    <hlm-table class="border border-gray-400 mt-2 rounded" *ngIf="hasCollaborate">
+        <hlm-trow>
+            <hlm-th class="w-[60%]">Name</hlm-th>
+            <hlm-th class="w-[30%]">Status</hlm-th>
+            <hlm-th class="w-[10%]"></hlm-th>
+        </hlm-trow>
+
+        @for (item of [{name: "OrganizationXX", x: 1}, {name: "OrganizationXY", x:0}]; track $index) {
+        <hlm-trow>
+            <hlm-td class="w-[60%] justify-right items-center">{{item.name}}</hlm-td>
+
+            <hlm-td class="w-[30%]">
+                <span hlmBadge variant="secondary">{{item.x == 1 ? 'Aguardando resposta' : 'Membro'}}</span>
+            </hlm-td>
+
+            <hlm-td class="w-[10%] justify-end ">
+                <button hlmBtn size="icon" variant="ghost" >
+                    <hlm-icon size='sm' name="lucideMoreHorizontal" />
+                </button>
+            </hlm-td>
+        </hlm-trow>
+        }
+    </hlm-table>
 
 </div>
+
+
+}
+
+
+
+<hlm-sheet side="right">
+    <button id="edit-profile" variant="outline" brnSheetTrigger hlmBtn>Edit Profile</button>
+    <hlm-sheet-content *brnSheetContent="let ctx">
+        <hlm-sheet-header>
+            <h3 hlmSheetTitle>Edit Profile</h3>
+            <p hlmSheetDescription>Make changes to your profile here. Click save when you're done.</p>
+        </hlm-sheet-header>
+        <div class="py-4 grid gap-4">
+            <div class="items-center grid grid-cols-4 gap-4">
+                <label hlmLabel for="name" class="text-right">Name</label>
+                <input hlmInput id="name" value="Pedro Duarte" class="col-span-3" />
+            </div>
+            <div class="items-center grid grid-cols-4 gap-4">
+                <label hlmLabel for="username" class="text-right">Username</label>
+                <input hlmInput id="username" value="@peduarte" class="col-span-3" />
+            </div>
+
+            <div class="w-[461px] h-full bg-white relative">
+
+                <div class="h-[10%] pl-[24px] flex justify-start items-center">
+    
+                    <button class="rounded-full" hlmBtn size="icon" variant="outline"><hlm-icon
+                            size='sm' name="lucideArrowLeft" /></button>
+                    <p class="text-[#0F172A] pl-4">Editing organization</p>
+    
+                </div>
+    
+                <div class="w-[80%] pl-4 pt-4 h-[124px] flex gap-[16px] flex-col">
+    
+                    <section
+                        class="w-[328px] h-[42px] rounded-md p-2 gap-[8px] flex flex-row justify-center items-center bg-gray-200">
+                        <button
+                            class="w-[105px] h-[32px] text-[13px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-white flex items-center">General
+                            info</button>
+                        <button
+                            class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">Members</button>
+                        <button
+                            class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">Audit</button>
+                        <button
+                            class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">About</button>
+                    </section>
+    
+                    <section>
+                        <label hlmLabel>Oganization<input
+                                class='border border-gray-400 w-[384px] h-[40px] gap-[8px] pl-[12px]'
+                                placeholder='Organizacao 01' /></label>
+                    </section>
+    
+                </div>
+    
+                <div class="absolute bottom-[2%] right-[5%]">
+    
+                    <button class="pr-4" (click)="FinishEdit()">Cancel</button>
+                    <button class="bg-[#0F172A]" hlmBtn (click)="FinishEdit()">Save</button>
+    
+                </div>
+    
+    
+    
+            </div>
+        </div>
+        <hlm-sheet-footer>
+            <button hlmBtn type="submit">Save Changes</button>
+        </hlm-sheet-footer>
+    </hlm-sheet-content>
+</hlm-sheet>

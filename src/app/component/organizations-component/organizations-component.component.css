@@ -1,8 +1,4 @@
-#div-dad {
-    width: 100vw;
-    height: 90vh;
-    overflow-x: hidden;
-}
+
 
 #title {
     display: flex;
@@ -22,14 +18,7 @@
     width: 100vw;
 }
 
-.div-orga {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 30%;
-    width: 60%;
-}
+
 
 #btn-start-organization,
 #btn-start-organization2 {
@@ -43,14 +32,4 @@
 
 #btn-start-organization2 {
     margin: 0px;
-}
-
-button {
-    transition: 0.2s;
-}
-
-button:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    transition: 0.2s;
 }

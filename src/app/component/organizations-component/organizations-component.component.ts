@@ -9,6 +9,7 @@ import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
 import { BrnSheetContentDirective, BrnSheetTriggerDirective } from '@spartan-ng/ui-sheet-brain';
 import { HlmSheetModule } from '@spartan-ng/ui-sheet-helm';
 import { HlmTableModule, } from '@spartan-ng/ui-table-helm';
+import { HlmTabsModule } from '@spartan-ng/ui-tabs-helm';
 import { HeaderService } from '../../Service/header.service';
 import { HlmTTypographyModule } from '../../sparta-ext/typograph..module';
 import { HeaderComponent } from '../header/header.component';
@@ -27,6 +28,7 @@ export interface organization {
         HlmTTypographyModule,
 
         //Spartan 
+        HlmTabsModule,
         BrnSheetTriggerDirective,
         BrnSheetContentDirective,
         HlmSheetModule,
@@ -54,6 +56,7 @@ export class OrganizationsComponentComponent {
 
     hasOrganization: boolean = true;
     hasCollaborate: boolean = false;
+    tabActivated: string = "general";
 
     create() {
         if (!this.hasOrganization) {
@@ -71,6 +74,13 @@ export class OrganizationsComponentComponent {
         this.organizations.push(newOrga)
     }
 
+    discard() {
+        this.EditOrganization()
+    }
+
+    save() {
+        this.EditOrganization()
+    }
 
 
 
@@ -93,9 +103,4 @@ export class OrganizationsComponentComponent {
         }
 
     }
-
-    FinishEdit() {
-        this.EditOrganization()
-    }
-
 }

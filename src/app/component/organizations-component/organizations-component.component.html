@@ -72,7 +72,7 @@
             </hlm-td>
 
             <hlm-td class="w-[10%] justify-end ">
-                <button hlmBtn size="icon" variant="ghost" >
+                <button hlmBtn size="icon" variant="ghost">
                     <hlm-icon size='sm' name="lucideMoreHorizontal" />
                 </button>
             </hlm-td>
@@ -94,6 +94,22 @@
             <h3 hlmSheetTitle>Edit Profile</h3>
             <p hlmSheetDescription>Make changes to your profile here. Click save when you're done.</p>
         </hlm-sheet-header>
+
+        <div class="py-4">
+
+            <hlm-tabs [tab]="tabActivated" class="w-full" (tabActivated)="tabActivated = $event">
+                <hlm-tabs-list class="w-full grid grid-cols-4" aria-label="tabs example">
+                    <button hlmTabsTrigger="general">General info</button>
+                    <button hlmTabsTrigger="members">Members</button>
+                    <button hlmTabsTrigger="audit">Audit</button>
+                    <button hlmTabsTrigger="about">About</button>
+                </hlm-tabs-list>
+            </hlm-tabs>
+
+        </div>
+
+    {{tabActivated}}
+
         <div class="py-4 grid gap-4">
             <div class="items-center grid grid-cols-4 gap-4">
                 <label hlmLabel for="name" class="text-right">Name</label>
@@ -107,49 +123,21 @@
             <div class="w-[461px] h-full bg-white relative">
 
                 <div class="h-[10%] pl-[24px] flex justify-start items-center">
-    
-                    <button class="rounded-full" hlmBtn size="icon" variant="outline"><hlm-icon
-                            size='sm' name="lucideArrowLeft" /></button>
+
+                    <button class="rounded-full" hlmBtn size="icon" variant="outline"><hlm-icon size='sm'
+                            name="lucideArrowLeft" /></button>
                     <p class="text-[#0F172A] pl-4">Editing organization</p>
-    
+
                 </div>
-    
-                <div class="w-[80%] pl-4 pt-4 h-[124px] flex gap-[16px] flex-col">
-    
-                    <section
-                        class="w-[328px] h-[42px] rounded-md p-2 gap-[8px] flex flex-row justify-center items-center bg-gray-200">
-                        <button
-                            class="w-[105px] h-[32px] text-[13px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-white flex items-center">General
-                            info</button>
-                        <button
-                            class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">Members</button>
-                        <button
-                            class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">Audit</button>
-                        <button
-                            class="w-[105px] h-[32px] rounded-[3px] p-[6px] px-[12px] gap-[10px] bg-gray-200 flex items-center">About</button>
-                    </section>
-    
-                    <section>
-                        <label hlmLabel>Oganization<input
-                                class='border border-gray-400 w-[384px] h-[40px] gap-[8px] pl-[12px]'
-                                placeholder='Organizacao 01' /></label>
-                    </section>
-    
-                </div>
-    
-                <div class="absolute bottom-[2%] right-[5%]">
-    
-                    <button class="pr-4" (click)="FinishEdit()">Cancel</button>
-                    <button class="bg-[#0F172A]" hlmBtn (click)="FinishEdit()">Save</button>
-    
-                </div>
-    
-    
-    
+
+
+
+
             </div>
         </div>
         <hlm-sheet-footer>
-            <button hlmBtn type="submit">Save Changes</button>
+            <button hlmBtn type="button" variant="outline" (click)="discard()">Cancelar</button>
+            <button hlmBtn type="submit" (click)="save()">Salvar</button>
         </hlm-sheet-footer>
     </hlm-sheet-content>
 </hlm-sheet>

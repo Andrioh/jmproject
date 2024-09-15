@@ -1,9 +1,11 @@
-<div class="px-8 pt-8" [ngClass]="{ 'absolute' : !hasOrganization }">
+<div class="px-8 pt-8" [ngClass]="{ 'absolute' : state === 'empty' }">
     <h2 hlmH2>Organizations</h2>
     <div class="text-sm text-slate-500">See all the organizations that you're a part of.</div>
 </div>
 
-@if(!hasOrganization){
+
+
+@if(state === "empty"){
 <div class="flex grow p-8 flex-col gap-2 items-center justify-center">
     <h3 hlmH3>Is empty here</h3>
     <p class="text-sm text-slate-500">You dont have any organization or not belongs to any</p>
@@ -12,10 +14,46 @@
     </button>
 </div>
 }
-@else {
+@else if(state === "error404"){
+    Api ou endpoint esta errado!
+}
+@else if(state === "unexpectedError"){
+    Ocorreu um erro inesperado
+}
+@else if (state === "loading"){
+
+    <div class="p-8">
+        <div class="flex flex-row justify-between items-center">
+            <hlm-skeleton class='h-6 w-56' />
+    
+            <div>
+                <hlm-skeleton class='h-8 w-36' />
+            </div>
+        </div>
+    
+        <div class="relative overflow-x-auto">
+            <hlm-table class="my-3 w-full text-sm text-left">
+                <hlm-trow>
+                    <hlm-skeleton class='h-4 w-36' />
+                </hlm-trow>
+                @for (item of [1,2,3,4]; track $index) {
+                <hlm-trow>
+                    <hlm-td class=" w-[90%] justify-right items-center">
+                        <hlm-skeleton class='h-4 w-48' />
+                    </hlm-td>
+    
+                    <hlm-td class=" w-[10%] justify-end">
+                        <hlm-skeleton class='h-4 w-12' />
+                    </hlm-td>
+                </hlm-trow>
+                }
+            </hlm-table>
+        </div>
+    </div>
+}
+@else if(state === "content") {
 
 <div class="p-8">
-
     <div class="flex flex-row justify-between items-center">
         <h2 hlmLarge>My organizations</h2>
 
@@ -87,7 +125,7 @@
 
 
 
-<hlm-sheet side="right">
+<hlm-sheet side="right" *ngIf="false">
     <button id="edit-profile" variant="outline" brnSheetTrigger hlmBtn>Edit Profile</button>
     <hlm-sheet-content *brnSheetContent="let ctx">
         <hlm-sheet-header>
@@ -108,7 +146,7 @@
 
         </div>
 
-    {{tabActivated}}
+        {{tabActivated}}
 
         <div class="py-4 grid gap-4">
             <div class="items-center grid grid-cols-4 gap-4">

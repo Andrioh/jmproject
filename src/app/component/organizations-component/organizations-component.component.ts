@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 import { lucideArrowLeft, lucideMoreHorizontal } from '@ng-icons/lucide';
 import { HlmBadgeModule } from '@spartan-ng/ui-badge-helm';
@@ -8,16 +8,15 @@ import { HlmIconModule } from '@spartan-ng/ui-icon-helm';
 import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
 import { BrnSheetContentDirective, BrnSheetTriggerDirective } from '@spartan-ng/ui-sheet-brain';
 import { HlmSheetModule } from '@spartan-ng/ui-sheet-helm';
+import { HlmSkeletonComponent } from '@spartan-ng/ui-skeleton-helm';
 import { HlmTableModule, } from '@spartan-ng/ui-table-helm';
 import { HlmTabsModule } from '@spartan-ng/ui-tabs-helm';
+import { catchError, Subscription, throwError } from 'rxjs';
+import { OrganizationsEndpoint } from '../../domain/organization/organization.endpoints';
+import { Organization } from '../../domain/organization/organization.models';
 import { HeaderService } from '../../Service/header.service';
 import { HlmTTypographyModule } from '../../sparta-ext/typograph..module';
 import { HeaderComponent } from '../header/header.component';
-
-export interface organization {
-    id: number,
-    name: string,
-}
 
 @Component({
     selector: 'app-organizations-component',
@@ -27,7 +26,8 @@ export interface organization {
         HeaderComponent,
         HlmTTypographyModule,
 
-        //Spartan 
+        //Spartan
+        HlmSkeletonComponent,
         HlmTabsModule,
         BrnSheetTriggerDirective,
         BrnSheetContentDirective,
@@ -48,21 +48,45 @@ export interface organization {
         class: "flex flex-col flex-1"
     }
 })
-export class OrganizationsComponentComponent {
+export class OrganizationsComponentComponent implements OnInit {
 
-    constructor(private headerservice: HeaderService) { }
+    private organizationsEndpoint = inject(OrganizationsEndpoint);
+    private headerservice = inject(HeaderService);
 
-    organizations: organization[] = [];
+    protected state = "none";
 
-    hasOrganization: boolean = true;
+    getOrganizationsSubscription!: Subscription;
+    organizations: Organization[] = [];
+
     hasCollaborate: boolean = false;
     tabActivated: string = "general";
 
-    create() {
-        if (!this.hasOrganization) {
-            this.hasOrganization = !this.hasOrganization;
-        }
+    ngOnInit() {
+        this.state = "loading";
+        this.getOrganizationsSubscription = this.organizationsEndpoint.getOrganizations()
+            .pipe(
+                catchError(x => {
+                    if (x.name === "HttpErrorResponse" && x.status == 404) {
+                        this.state = "error404";
+                    }
+                    else {
+                        this.state = "unexpectedError"
+                    }
 
+                    return throwError(() => x);
+                })
+            )
+            .subscribe(x => {
+                this.state = x.length === 0 ? "empty" : "content";
+                this.organizations = x;
+            });
+    }
+
+    ngOnDestroy() {
+        this.getOrganizationsSubscription.unsubscribe();
+    }
+
+    create() {
         let lastId = this.organizations.reduce((maxId, org) => Math.max(maxId, org.id), 0);
 
         lastId += 1;
@@ -81,9 +105,6 @@ export class OrganizationsComponentComponent {
     save() {
         this.EditOrganization()
     }
-
-
-
 
     HasCollaborate: boolean = false;
     ColorBackground: string = "white";

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { HlmCardModule } from '@spartan-ng/ui-card-helm';
+import { RouterModule } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
 import { lucideBuilding2, lucideKey, lucideRefreshCcw, lucideSettings, lucideShieldAlert } from '@ng-icons/lucide';
+import { HlmCardModule } from '@spartan-ng/ui-card-helm';
 import { HlmIconModule } from '@spartan-ng/ui-icon-helm';
-import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../component/header/header.component';
-import { HeaderService } from '../../Service/header.service';
+import { HeaderService } from '../../shared/Service/header.service';
 
 @Component({
     selector: 'app-home',

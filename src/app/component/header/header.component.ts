@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
-import { lucideBell, lucideHelpCircle, lucideMenu, lucideMessageSquare, lucideArrowLeft } from '@ng-icons/lucide';
+import { lucideArrowLeft, lucideBell, lucideHelpCircle, lucideMenu, lucideMessageSquare } from '@ng-icons/lucide';
 import { HlmButtonModule } from '@spartan-ng/ui-button-helm';
 import { HlmIconModule } from '@spartan-ng/ui-icon-helm';
-import { HeaderService } from '../../Service/header.service';
-import { Router } from '@angular/router';
+import { HeaderService } from '../../shared/Service/header.service';
 
 @Component({
     selector: 'app-header',

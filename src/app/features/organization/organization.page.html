@@ -1,18 +1,14 @@
-<div class="px-8 pt-8" [ngClass]="{ 'absolute' : state === 'empty' }">
-    <h2 hlmH2>Organizations</h2>
-    <div class="text-sm text-slate-500">See all the organizations that you're a part of.</div>
-</div>
+<app-header></app-header>
 
+<div class="flex flex-col flex-1">
+    <div class="px-8 pt-8" [ngClass]="{ 'absolute' : state === 'empty' }">
+        <h2 hlmH2>Organizations</h2>
+        <div class="text-sm text-slate-500">See all the organizations that you're a part of.</div>
+    </div>
 
 
 @if(state === "empty"){
-<div class="flex grow p-8 flex-col gap-2 items-center justify-center">
-    <h3 hlmH3>Is empty here</h3>
-    <p class="text-sm text-slate-500">You dont have any organization or not belongs to any</p>
-    <button hlmBtn (click)="create()">
-        Start a organization
-    </button>
-</div>
+    <app-organization-empty (byClickButton)="create()" />
 }
 @else if(state === "error404"){
     Api ou endpoint esta errado!
@@ -123,9 +119,9 @@
 
 }
 
+</div>
 
-
-<hlm-sheet side="right" *ngIf="false">
+<hlm-sheet side="right" *ngIf="true">
     <button id="edit-profile" variant="outline" brnSheetTrigger hlmBtn>Edit Profile</button>
     <hlm-sheet-content *brnSheetContent="let ctx">
         <hlm-sheet-header>

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { OrganizationsComponent } from './page/organizations/organizations.component';
-import { HomePage } from './page/home/home.page';
+import { RouterModule, Routes } from '@angular/router';
+import { HomePage } from './features/home/home.page';
+import { OrganizationPage } from './features/organization/organization.page';
 
 export const routes: Routes = [
     {path: '', component: HomePage },
-    {path: 'organizations', component: OrganizationsComponent }
+    {path: 'organizations', component: OrganizationPage }
 ];
 
 @NgModule({
